@@ -6,4 +6,4 @@ def is_pangram(sentence):
     :param sentence: The input sentence string
     :return: True if sentence is a pangram and False if it is not
     """
-    return len(list(filter(lambda x: x.isalpha(), set(sentence)))) == 26
+    return len(list(filter(lambda x: x.isalpha(), set(sentence.lower())))) == 26
