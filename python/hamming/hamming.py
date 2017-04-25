@@ -8,8 +8,8 @@ def distance(nucleotide1, nucleotide2):
     """
     difference_count = 0
     if len(nucleotide1) != len(nucleotide2):
-        raise ValueError
-    for index, nuc in enumerate(nucleotide1):
-        if nuc != nucleotide2[index]:
+        raise ValueError('DNA strands must be of the same length')
+    for nuc1, nuc2 in zip(nucleotide1, nucleotide2):
+        if nuc1 != nuc2:
             difference_count += 1
     return difference_count
