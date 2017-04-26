@@ -8,4 +8,4 @@ def add_gigasecond(dt):
     :param dt: Datetime input
     :return: Datetime output
     """
-    return dt + timedelta(seconds=1000000000)
+    return dt + timedelta(seconds=1e9)
