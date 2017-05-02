@@ -1,6 +1,3 @@
-import re
-
-
 def rotate(input, key):
     """
     Rotational/Caesar cipher
@@ -14,18 +11,16 @@ def rotate(input, key):
     """
     if key == 0 or key == 26:
         return input
-    new_string = ''
+    string_list = []
     for c in input:
-        if re.match(r'[A-Za-z]', c):
+        if c.isalpha():
             new_char = ord(c) + key
-            if c.isupper() and new_char > 90:
-                remaining = new_char - 90
-                new_string += chr(64 + remaining)
-            elif not c.isupper() and new_char > 122:
-                remaining = new_char - 122
-                new_string += chr(96 + remaining)
+            if c.isupper() and new_char > ord('Z'):
+                string_list.append(chr(64 + new_char - ord('Z')))
+            elif not c.isupper() and new_char > ord('z'):
+                string_list.append(chr(96 + new_char - ord('z')))
             else:
-                new_string += chr(new_char)
+                string_list.append(chr(new_char))
         else:
-            new_string += c
-    return new_string
+            string_list.append(c)
+    return ''.join(string_list)
