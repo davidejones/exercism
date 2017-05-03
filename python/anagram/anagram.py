@@ -10,9 +10,11 @@ def detect_anagrams(word, candidates):
     :param candidates: a list of strings that may or may not be anagrams of input word
     :return: a list of valid anagram strings
     """
-    word_counter = Counter(word.lower())
+    word_lower = word.lower()
+    word_counter = Counter(word_lower)
     results = []
     for candidate in candidates:
-        if Counter(candidate.lower()) == word_counter and word.lower() != candidate.lower():
+        candidate_lower = candidate.lower()
+        if Counter(candidate_lower) == word_counter and word_lower != candidate_lower:
             results.append(candidate)
     return results
