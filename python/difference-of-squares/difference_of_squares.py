@@ -9,8 +9,7 @@ def square_of_sum(amount):
     :param amount: integer amount to square of sum
     :return: integer result amount
     """
-    sequence = [x for x in range(1, amount + 1)]
-    return reduce(lambda x, y: x+y, sequence, 0) ** 2
+    return sum(x for x in range(1, amount + 1)) ** 2
 
 
 def sum_of_squares(amount):
@@ -31,4 +30,4 @@ def difference(amount):
     :param amount: integer amount to use
     :return: integer result amount
     """
-    return abs(sum_of_squares(amount) - square_of_sum(amount))
+    return square_of_sum(amount) - sum_of_squares(amount)
