@@ -1,6 +1,9 @@
 class Year {
-    isLeap(year) {
-        return (year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)
+    constructor(year) {
+        this.year = year;
+    }
+    isLeap() {
+        return (this.year % 4 === 0) && (this.year % 100 !== 0) || (this.year % 400 === 0)
     }
 }
 
